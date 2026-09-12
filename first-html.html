@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first</title>
+    <style>
+        body{
+    background-color: aquamarine;
+    color: black;
+    font-family: Arial, sans-serif;
+        }
+
+        body.dark-mode{
+    background-color: midnightblue;
+    color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <div>
+        <h2>I am Wesley Ernest O. Lim</h2>
+        <br>
+        <p>I am a student at CSU, currently pursuing a degree in Information technology</p>
+        <tr>Things That I Like</tr>
+        <dl>
+            <dt>Movies</dt>
+            <dd>I like to watch horror movies</dd>
+        </dl>
+
+        <button onclick="document.body.classList.toggle('dark-mode');">Toggle background</button>
+        
+        <textarea label="Enter your text here:" id="id" rows="4" cols="50">
+        </textarea>
+
+            <script>
+            console.log("HIHIHI");
+            document.getElementById("id").innerHTML = "Hello, I am Wesley Ernest O. Lim. I am a student at CSU, currently pursuing a degree in Information technology. I like to watch horror movies.";
+        </script>
+    </div>
+</body>
+</html>
