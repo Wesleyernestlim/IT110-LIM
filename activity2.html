@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #695555;
+            color: white;
+        }
+        #images{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #links{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>I. Images</h2>
+    <div id="images">
+        
+        <div id="im1">
+        <h4>First Image</h4>
+        <img src="image/he.jpg" alt="A kid whose cringing" width="200" height="200">
+        </div>
+        
+        <div id="im2">
+        <h4>Second Image</h4>
+        <figure>
+        <img src="image/download.jpg" alt="A person crying cuz of frustration" width="200" height="200">
+        <figcaption>Me rn cuz there's a lot of activities</figcaption>
+        </figure>
+        </div>
+        
+        <div id="im3">
+        <h4>Third Image</h4>
+        <img src="image/cry.jpg" alt="a woman who forced a smile despite knowing how ugly her haircut is" width="200" height="200">
+        </div>
+    </div>
+
+
+    <h2>II. Hyperlinks</h2>
+    <ul id ="links">
+        <li><a href="#media">Media</a></li>
+
+        <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Click to open New Tab</a></li>
+
+        <li><a href="mailto:wlim660@gmail.com">Email me</a></li>
+
+        <li><a href="2ndpage.html">2nd Page</a></li>
+    </ul>
+
+    <h2>III. Medias</h2>
+    <div id="media">
+        <h4>Audio</h4>
+        <audio id="audi" src="media/Yuh.mp3" type="audio/mp3" alt="Yuh by ariana" controls autoplay loop>
+            Your browser does not support the audio element.
+        </audio>
+        <h4>Video</h4>
+        <video id="vid" src="media/fetch.mp4" type="video/mp4" alt="An owner and a pet" controls autoplay muted>
+            Your browser does not support the video element.
+        </video>
+    </div>
+
+
+    <h2>IV. Useful Tags</h2>
+    <div id="tags">
+        <!-- I chose 'pre' because I can use it to introduce myself without formatting issues -->
+        <pre>
+            Hi good day!
+            I am <b>Wesley Ernest Lim</b>, a 3rd year <abbr title="Bachelor of Science in Information Technology">BSIT</abbr> student.
+            
+            <mark>20 years old, 5'3 tall, and weighs 45kg.</mark>
+            I currently enrolled at the course: IT110 - EULM1
+        </pre>
+        <!-- I chose 'mark' because I want to highlight my personal information -->
+
+        <blockquote>
+            <p>“The only limit to our realization of tomorrow will be our doubts of today.”</p>
+            <footer>- Franklin D. Roosevelt</footer>
+        </blockquote>
+        <!-- I chose 'blockquote' because I want to something to read as an inspiration -->
+        </div>
+
+
+        <!--
+        In the DOM structure, the <div id="images"> element serves as the parent of multiple children, which include three <h4> heading elements and a <figure> element. 
+        The <figure> element is also the parent of two elements: an <img> tag that shows the second image and a <figcaption> tag that provides a description, making them siblings. 
+        Moving up the hierarchy, <div id="images"> is a child of <body>, which is itself a child of the root <html> element. This illustrates how the DOM organizes the page in a 
+        hierarchical tree format, where each element can house other elements, and those housed elements can have sibling elements at the same level.
+        -->
+</body>
+</html>
