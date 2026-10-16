@@ -1,0 +1,231 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Base ===== */
+body {
+    background-color: lightsteelblue;
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    line-height: 1.5;
+    color: #2c3e50;
+}
+
+h1, h2 {
+    color: #1b3a5c;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #cdd9e5;
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.25rem;
+    text-align: left;
+}
+
+/* pseudo-element */
+h2::before {
+    content: "• ";
+    color: #4a7ba6;
+    font-weight: 400;
+}
+
+/* ===== Layout ===== */
+header, footer {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    padding: 10px 0;
+    margin-top: 20px;
+    color: #4a6274;
+    font-size: 0.9rem;
+    border-radius: 15px;
+}
+
+/* ===== Navigation ===== */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+nav a {
+    background-color: #2c5f8a;
+    color: #ffffff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 5px rgba(44, 95, 138, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* pseudo-class */
+nav a:hover {
+    background-color: #7aa8cc;
+    color: #ffffff;
+}
+
+/* ===== Card ===== */
+.card {
+    width: 500px; /* fixed width */
+    background-color: #f5f8fb; 
+    border: 2px solid #81b3dc; 
+    text-align: center;
+    border-radius: 20px;
+    padding: 1.5rem 1.8rem;
+    margin: 0 auto 1.8rem auto; /* centered + bottom space */
+    box-shadow: 0 6px 14px rgba(44, 95, 138, 0.1);
+    /* total rendered width = 500px (border-box includes padding & border) */
+    
+}
+
+/* ID selector – stands out */
+#about {
+    border-color: #245485;
+    position: relative;
+}
+
+#about::after {
+    content:"★";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 2rem;
+    background-color: #dce8f2; 
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(44, 95, 138, 0.15);
+    border: 1px solid #81b3dc;
+}
+
+/* ===== Intro ===== */
+.intro {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #3d5a73;
+    font-weight: 500;
+}
+
+/* pseudo-element */
+.intro::first-letter {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c5f8a; 
+    margin-right: 0.15rem;
+    float: left;
+    line-height: 1;
+}
+
+/* descendant selector */
+.card p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+/* ===== Skills ===== */
+.skills-list {
+    list-style-type: none;
+    padding: 5px 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+/* child selector */
+.skills-list > li {
+    background-color: #2c5f8a;
+    color: #ffffff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 5px rgba(44, 95, 138, 0.2);
+}
+
+/* ===== Display & Visibility ===== */
+.hide-none {
+    display: none;
+}
+
+.hide-visibility {
+    visibility: hidden;
+}
+
+.scroll-box {
+    height: 120px;
+    overflow: auto;
+    background-color: #f0f5fa;
+    border: 1px dashed #81b3dc;
+}
+
+.scroll-box p {
+    margin-bottom: 1rem;
+}
+
+/* ===== Cascade Demo ===== */
+.card p {
+    color: #2c3e50; /* first rule */
+}
+.card p {
+    color: #1b2a38; /* second rule = wins */
+}
+/* Higher specificity override to keep intro distinct */
+.card .intro {
+    color: #3d5a73;
+    font-weight: 500;
+}
+
+/* ===== REFLECTION =====
+1. Why did one conflicting rule prevail in Part A?
+    
+    Both `.card p` rules have the same specificity (0,1,1),
+    so the one that appeared later in the stylesheet took
+    priority. If the specificity had varied, the more specific 
+    selector would have been prioritized regardless of the order.
+
+2. What would be the rendered width if box-sizing was set to content-box?
+
+    The width (500px) plus padding-left (1.5rem = 24px) 
+    plus padding-right (24px) plus border-left (2px) plus 
+    border-right (2px) equals 500 + 24 + 24 + 2 + 2 = 552px.
+
+3. When should visibility: hidden be used instead of display: none?
+
+    We use visibility: hidden when we wish to conceal an element while
+    still preserving its space in the layout, in order to prevent reflow.    
+    And for display: none  is when we want the element to be completely
+    removed without leaving any space.
+
+   VISIBLE DIFFERENCE (Part D):
+   .hide-none (display: none) removes the paragraph completely — no gap.
+   .hide-visibility (visibility: hidden) keeps the paragraph's box in the
+   flow — invisible but still takes up space.
+*/
